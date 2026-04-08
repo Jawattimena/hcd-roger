@@ -43,10 +43,11 @@ Verder op de dag hebben we usertest met Roger gedaan waar deze punten uit zijn g
   - Moet wennen aan licht verschil
   - Gevoellig voor wit licht. Maar hij vind darkmodus top
 - **Welke boeken/programma’s gebruikt u?**
+
   - Joep dohmen
   - Delikom
   - Edutekst
-  ***
+
   - Hij leest veel op zn telefoon om het boek tot zich te nemen maar als hij leert doet hij dat op de computer.
   - Screenreaders: NVDA en supernova
   - De blindheid zit in het midden van z’n oog minder aan de zijkanten de buitenkanten wel zien
