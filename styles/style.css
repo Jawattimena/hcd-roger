@@ -16,12 +16,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  &:focus-visible {
+    outline: 2px solid yellow;
+    outline-offset: 1em;
+  }
 }
 
 /* Dit is de structuur en de layout van de site waar de text gelezen wordt*/
 body {
   background-color: rgb(24, 24, 24);
-  color: yellow;
+  color: white;
 
   main {
     display: flex;
@@ -69,6 +73,7 @@ body {
       width: 2em;
       /* height: 1.5em; */
       font-size: calc(var(--base-font-size) * 0.5);
+      font-weight: calc(var(--font-weight) * 1.5);
     }
 
     .sentence {
@@ -89,20 +94,36 @@ body {
         margin: 0;
         position: absolute;
       }
+      label {
+        padding: 0.5em 0;
+      }
 
       &:has(input:checked) label {
-        background-color: rgb(255, 0, 0);
+        background-color: yellow;
         color: black;
 
         .sentence-number {
-          color: red;
+          color: yellow;
         }
       }
 
       &:focus-within {
+        label {
+          color: yellow;
+        }
+
         .sentence-number {
           color: black;
           background-color: yellow;
+        }
+      }
+
+      &:has(input:checked):focus-within label {
+        background-color: yellow;
+        color: black;
+
+        .sentence-number {
+          color: black;
         }
       }
     }
@@ -111,16 +132,246 @@ body {
 
 /* Dit is de rechter kant van de website waar notities gemaakt worden */
 .notities {
-  border: 1px solid rgb(131, 131, 131);
+  border-left: 1px solid rgb(131, 131, 131);
   background-color: rgb(33, 33, 33);
   width: 40vw;
-  margin: 2em;
-  border-radius: 1em;
+  margin: 0em;
+  padding: 2em;
+  border-radius: em;
 
   h2 {
     font-family: inter;
     font-size: var(--h2-font-size);
     font-weight: calc(var(--font-weight) + 200);
-    margin: 1em;
   }
+}
+
+/* Arcering bij checked */
+.sentence:has(input:checked) label {
+  background-color: yellow;
+  color: black;
+}
+
+/* Notitieblokken in de rechter kolom */
+.note-block {
+  padding: 1.5em 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  border-bottom: solid 1px grey;
+
+  &:focus-within .note-verse-label {
+    border-left: solid 1px yellow;
+    background-color: rgba(255 255 0 / 0.3);
+    textaria {
+      color: yellow;
+    }
+  }
+}
+
+.note-verse-label {
+  font-family: inter;
+  font-size: calc(var(--base-font-size) * 0.6);
+  font-weight: 400;
+  color: white;
+  line-height: 1.4em;
+  background-color: rgb(45, 45, 45);
+  border-radius: 0.3em;
+  border-left: solid 1px transparent;
+  padding: 0.5em 0em 0.5em 0.75em;
+}
+
+.notities textarea {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 6px;
+  padding: 0.75em;
+  font-family: inter;
+  font-size: calc(var(--base-font-size) * 0.65);
+  font-weight: 300;
+  line-height: 1.6em;
+  resize: vertical;
+  min-height: 80px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: yellow;
+  }
+}
+
+/* Versnummer boven elke notitie (bv. "Genesis 1:1") */
+.note-verse-ref {
+  font-family: inter;
+  font-size: calc(var(--base-font-size) * 0.5);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: yellow;
+  padding: 0 0 0.1em 0;
+}
+/* -------------------------------------------------------------------- */
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.75em 1.5em;
+  background-color: rgb(18, 18, 18);
+  border-bottom: 1px solid rgb(60, 60, 60);
+}
+
+#settings-toggle {
+  background: transparent;
+  color: white;
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 6px;
+  padding: 0.4em 0.9em;
+  font-family: inter;
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: 2px solid yellow;
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    border-color: yellow;
+    color: yellow;
+  }
+}
+
+#settings-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 1.5em;
+  z-index: 100;
+  background-color: rgb(33, 33, 33);
+  border: 1px solid rgb(80, 80, 80);
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+
+  h2 {
+    font-family: inter;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+  }
+}
+
+#settings-panel[hidden] {
+  display: none;
+}
+
+.settings-uitleg {
+  font-family: inter;
+  font-size: 0.75rem;
+  color: rgb(160, 160, 160);
+  line-height: 1.5em;
+}
+
+.setting-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+
+  label {
+    font-family: inter;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+  }
+
+  input {
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 6px;
+    padding: 0.5em 0.75em;
+    font-family: inter;
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: yellow;
+    }
+  }
+}
+
+.setting-desc {
+  font-family: inter;
+  font-size: 0.7rem;
+  color: rgb(160, 160, 160);
+}
+
+.settings-actions {
+  display: flex;
+  gap: 0.75em;
+
+  button {
+    font-family: inter;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: none;
+
+    &:focus {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+
+  #opslaan {
+    background-color: yellow;
+    color: black;
+    font-weight: 600;
+  }
+
+  #settings-sluiten {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(80, 80, 80);
+
+    &:hover {
+      border-color: white;
+    }
+  }
+}
+
+#opgeslagen-melding {
+  font-family: inter;
+  font-size: 0.75rem;
+  color: yellow;
+  min-height: 1.2em;
+}
+
+.note-save-btn {
+  align-self: flex-start;
+  background-color: yellow;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin: 1em 0;
+  padding: 01em;
+  font-family: inter;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.note-save-btn:hover {
+  opacity: 0.85;
+}
+
+.note-save-btn:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }

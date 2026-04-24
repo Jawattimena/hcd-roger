@@ -7,13 +7,19 @@
     <title>Test for Roger</title>
   </head>
   <body>
-    <header></header>
     <main>
-      <div class="texts">
+      <div class="texts" tabindex="-1">
         <article>
           <!-- https://www.bible.com/bible/111/GEN.1.NIV -->
-          <h1 class="book-chapter">Genesis 1</h1>
-          <h2 class="heading">The Beginning</h2>
+          <h1
+            tabindex="0"
+            class="book-chapter"
+            aria-label="The book of Genesis chapter 1"
+          >
+            Genesis 1
+          </h1>
+
+          <h2 tabindex="0" class="heading">The Beginning</h2>
 
           <p class="sentence">
             <label aria-hidden="true" tabindex="-1" for="Genesis-1:1">
@@ -22,7 +28,7 @@
             </label>
             <input
               aria-label="In the
-            beginning God created the heavens and the earth."
+              beginning God created the heavens and the earth."
               type="checkbox"
               id="Genesis-1:1"
             />
@@ -36,7 +42,7 @@
             </label>
             <input
               aria-label="Now the
-            earth was formless and empty, darkness was over the surface of the
+            earth was formless and empty, darkness was over the surf  ace of the
             deep, and the Spirit of God was hovering over the waters."
               type="checkbox"
               id="Genesis-1:2"
@@ -499,9 +505,10 @@
           </p>
         </article>
       </div>
-      <div class="notities">
+      <div class="notities" tabindex="-1">
         <h2>Notes</h2>
       </div>
     </main>
+    <script src="/javascript/script.js"></script>
   </body>
 </html>

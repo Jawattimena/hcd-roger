@@ -10,7 +10,7 @@ Mijn eerste idee is dat de gebruiker met behulp van een screenreader door de web
 
 ![Alt text](documents/IMG_6622.JPG)
 
-## Dag 2
+## Dag 2 (test Rogier)
 
 vandaag ben ik aan de slag gegaan om te kijken of ik stukjes text aan de hand van de screen reader kon markeren met een kleurtje. Het werkt en verder vond ik het lastig om al een werkend concept te maken.
 
@@ -66,3 +66,57 @@ Doordat de tab niet goed meeliep met de screen reader, werd er soms een zin voor
 Door bijna alles op tab index -1 te zetten en aria-hidden te gebruiken, heb ik het werkend gekregen. Daarnaast heb ik op alle checkboxes een aria-label gezet met de tekst uit de label. De label zelf is dus onzichtbaar en wordt niet meer voorgelezen, maar de checkbox wel.
 
 Echt een bizarre workaround en rare code, maar goed… het werkt wel.
+
+## Dag 4 (test Rogier)
+
+Roger gebruikt een goede screenreader op zijn telefoon, waarmee hij zijn documenten makkelijk kan terugvinden en laten voorlezen. Het maken van notities gaat alleen nog niet zo goed en is lastig voor hem.
+
+Hij gebruikt een klein extern toetsenbord dat hij op zijn telefoon aansluit, omdat hij het toetsenbord op het scherm zelf niet gebruikt. Met dit losse toetsenbord kan hij wel blind typen.
+
+Daarnaast maakt hij gebruik van meerdere screenreaders, zodat hij niet afhankelijk is van maar één programma. Dit is handig, want soms zorgen updates ervoor dat bepaalde functies ineens niet meer werken.
+
+Roger vindt het belangrijk dat hij zelf de snelheid van de spraak kan aanpassen naar wat voor hem prettig is.
+
+Qua lettertypes heeft hij geen voorkeur. Op den duur ziet hij namelijk helemaal niets meer en wordt de gesproken stem voor hem het belangrijkste.
+
+## WEEK 2
+
+Feedback Leonie:
+
+Pas op met de check boxes dat de screenreader niet in de war raakt of de gebruiker zelf
+
+## Dag 6 (test Rogier)
+
+Test feedback:
+
+Zelf sneltoetsen instellen vind hij fijn
+
+rood op zwart is lastig lees baar 
+
+moeite door dat de voice over op google chrome slecht werkt
+
+## WEEK 3
+
+Feedback Leonie:
+
+Zorg dat je nog notities kan maken
+
+## Dag 8 (test Rogier)
+
+Test feedback:
+
+knop is te overheersend
+
+knop mag weg als het gesaved is
+
+een manier vinden om te kunnen switchen tussen de text en de notities.
+
+Notitie text mag groter
+
+## WEEK 4
+
+Feedback Leonie:
+
+meer focussen op wat de screen reader zegt
+
+en het moet menselijk klinken
