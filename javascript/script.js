@@ -96,6 +96,7 @@ function addNote(id, verseText) {
 
   saveButton.addEventListener("click", () => {
     saveNote(id, textarea.value);
+    saveButton.classList.add("hidden");
   });
 
   block.appendChild(verseRef);

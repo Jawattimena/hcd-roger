@@ -26,6 +26,7 @@
 body {
   background-color: rgb(24, 24, 24);
   color: white;
+  overflow-y: hidden;
 
   main {
     display: flex;
@@ -137,7 +138,7 @@ body {
   width: 40vw;
   margin: 0em;
   padding: 2em;
-  border-radius: em;
+  overflow-y: scroll  ;
 
   h2 {
     font-family: inter;
@@ -159,10 +160,10 @@ body {
   flex-direction: column;
   gap: 0.5em;
 
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px rgba(80 80 80 / 0.4);
 
-  &:focus-within .note-verse-label {
-    border-left: solid 1px yellow;
+  &:has(textarea:focus) .note-verse-label {
+    
     background-color: rgba(255 255 0 / 0.3);
     textaria {
       color: yellow;
@@ -172,14 +173,14 @@ body {
 
 .note-verse-label {
   font-family: inter;
-  font-size: calc(var(--base-font-size) * 0.6);
+  font-size: calc(var(--base-font-size) * .9);
   font-weight: 400;
   color: white;
   line-height: 1.4em;
   background-color: rgb(45, 45, 45);
   border-radius: 0.3em;
   border-left: solid 1px transparent;
-  padding: 0.5em 0em 0.5em 0.75em;
+  padding: 0.5em 0.75em 0.5em 0.75em;
 }
 
 .notities textarea {
@@ -189,7 +190,7 @@ body {
   border-radius: 6px;
   padding: 0.75em;
   font-family: inter;
-  font-size: calc(var(--base-font-size) * 0.65);
+  font-size: calc(var(--base-font-size) * 0.8);
   font-weight: 300;
   line-height: 1.6em;
   resize: vertical;
@@ -205,7 +206,7 @@ body {
 /* Versnummer boven elke notitie (bv. "Genesis 1:1") */
 .note-verse-ref {
   font-family: inter;
-  font-size: calc(var(--base-font-size) * 0.5);
+  font-size: calc(var(--base-font-size) * 0.7);
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -354,24 +355,29 @@ header {
 }
 
 .note-save-btn {
-  align-self: flex-start;
-  background-color: yellow;
+  align-self: flex-end;
+  /* background-color: yellow; */
   color: black;
   border: none;
   border-radius: 6px;
-  width: 100%;
+  /* width: 50%; */
   margin: 1em 0;
-  padding: 01em;
+  padding: 01em 2em;
   font-family: inter;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .note-save-btn:hover {
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 .note-save-btn:focus {
-  outline: 2px solid white;
+  outline: 2px solid yellow;
+  background-color: yellow;
   outline-offset: 2px;
+}
+
+.hidden {
+  display: none;
 }
